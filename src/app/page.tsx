@@ -91,6 +91,7 @@ const siteConfig = {
     legalForm: "Einzelunternehmen (Kleingewerbe)",
     vatId: "Keine USt-IdNr. vorhanden.",
     hosting: "Netlify, Inc. (USA)",
+    agbLastUpdated: "02.03.2026",
   },
 };
 
@@ -156,7 +157,7 @@ export default function Home() {
         <Section
           id="leistungen"
           title="Leistungen im Überblick."
-          className="pt-2 md:pt-6"
+          className="pt-6 md:pt-10"
         >
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {siteConfig.services.map((service) => (
@@ -168,7 +169,7 @@ export default function Home() {
                   <h3 className="text-lg font-semibold text-white">
                     {service.title}
                   </h3>
-                  <span className="text-sm font-semibold text-[#3ac6cd]">
+                  <span className="shrink-0 whitespace-nowrap text-sm font-semibold text-[#3ac6cd]">
                     {service.price}
                   </span>
                 </div>
@@ -227,7 +228,7 @@ export default function Home() {
       </main>
 
       <footer className="relative z-10 border-t border-white/10">
-        <div className="mx-auto grid max-w-6xl items-start gap-6 px-6 py-10 text-xs text-white/60 md:grid-cols-2">
+        <div className="mx-auto grid max-w-6xl items-start gap-6 px-6 py-10 text-xs text-white/60 md:grid-cols-2 lg:grid-cols-3">
           <details
             id="impressum"
             className="self-start rounded-2xl border border-white/10 bg-white/5 p-5"
@@ -243,6 +244,80 @@ export default function Home() {
               </p>
               <p className="mt-3">Rechtsform: {siteConfig.legal.legalForm}</p>
               <p>USt-IdNr.: {siteConfig.legal.vatId}</p>
+            </div>
+          </details>
+          <details
+            id="agb"
+            className="self-start rounded-2xl border border-white/10 bg-white/5 p-5"
+          >
+            <summary className="cursor-pointer text-sm font-semibold text-white">
+              AGB
+            </summary>
+            <div className="mt-4 space-y-3">
+              <p>
+                Stand: {siteConfig.legal.agbLastUpdated}
+              </p>
+              <p>
+                1. Geltungsbereich: Diese AGB gelten fuer alle Auftraege zur
+                Fahrzeugaufbereitung zwischen {siteConfig.name} und
+                Auftraggebern.
+              </p>
+              <p>
+                2. Vertragsschluss: Angebote sind unverbindlich. Ein Vertrag
+                kommt erst mit Terminbestaetigung oder Beginn der Leistung
+                zustande.
+              </p>
+              <p>
+                3. Leistungen: Der Leistungsumfang ergibt sich aus der
+                individuellen Vereinbarung. Angaben zu Dauer und Ergebnis sind
+                Richtwerte. Nicht jeder Mangel (z. B. tiefe Kratzer,
+                Lackdefekte, Materialalterung) kann vollstaendig beseitigt
+                werden.
+              </p>
+              <p>
+                4. Preise und Zahlung: Es gelten die individuell vereinbarten
+                Preise. Die Verguetung ist nach Leistungserbringung sofort ohne
+                Abzug faellig, sofern nichts anderes vereinbart wurde.
+              </p>
+              <p>
+                5. Mitwirkungspflichten: Fahrzeuge sind mit ueblicher
+                Betriebsbereitschaft zu uebergeben. Persoenliche Gegenstaende
+                und Wertsachen sind vorab zu entfernen. Auf bekannte
+                Vorschäden/Empfindlichkeiten ist hinzuweisen.
+              </p>
+              <p>
+                6. Termine und Verzug: Vereinbarte Termine sind einzuhalten.
+                Bei durch den Auftraggeber verursachter Verzoegerung kann ein
+                neuer Termin erforderlich sein.
+              </p>
+              <p>
+                7. Gewaehrleistung: Es gelten die gesetzlichen
+                Maengelrechte. Offensichtliche Maengel sollen unverzueglich
+                angezeigt werden.
+              </p>
+              <p>
+                8. Haftung: Unbeschraenkte Haftung bei Vorsatz, grober
+                Fahrlaessigkeit sowie bei Verletzung von Leben, Koerper oder
+                Gesundheit. Bei leicht fahrlaessiger Verletzung wesentlicher
+                Vertragspflichten ist die Haftung auf den vertragstypischen,
+                vorhersehbaren Schaden begrenzt. Im Uebrigen ist die Haftung
+                ausgeschlossen, soweit gesetzlich zulaessig.
+              </p>
+              <p>
+                9. Widerrufsrecht fuer Verbraucher: Bei Fernabsatz- oder
+                ausserhalb von Geschaeftsraeumen geschlossenen Vertraegen gelten
+                die gesetzlichen Widerrufsrechte. Eine ggf. erforderliche
+                Widerrufsbelehrung wird gesondert erteilt.
+              </p>
+              <p>
+                10. Streitbeilegung: Wir sind nicht verpflichtet und nicht
+                bereit, an Streitbeilegungsverfahren vor einer
+                Verbraucherschlichtungsstelle teilzunehmen.
+              </p>
+              <p>
+                11. Schlussbestimmungen: Es gilt deutsches Recht unter
+                Beachtung zwingender Verbraucherschutzvorschriften.
+              </p>
             </div>
           </details>
           <details
