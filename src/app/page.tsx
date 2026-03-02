@@ -34,11 +34,6 @@ const siteConfig = {
       description: "Glanzauffrischung nach Zustand.",
     },
     {
-      title: "Rost-/Kratzer-Aufbereitung",
-      price: "ab 59 €",
-      description: "Nach Zustand & Absprache.",
-    },
-    {
       title: "Scheibenversiegelung",
       price: "ab 39 €",
       description: "Abperleffekt für klare Sicht.",
@@ -147,7 +142,7 @@ export default function Home() {
                 WhatsApp schreiben
               </ShimmerButton>
             </div>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-white/60">
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-sm text-white/60">
               {siteConfig.trustPoints.map((point) => (
                 <div key={point} className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#3ac6cd]" />
