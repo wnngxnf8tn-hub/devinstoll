@@ -160,11 +160,17 @@ export default function Home() {
           className="pt-14 md:pt-20"
         >
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {siteConfig.services.map((service) => (
-              <div
-                key={service.title}
-                className="rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:border-white/30 hover:bg-white/10"
-              >
+            {siteConfig.services.map((service, index) => {
+              const isLastItem = index === siteConfig.services.length - 1;
+              const needsCenteredLastRow = siteConfig.services.length % 3 === 2;
+
+              return (
+                <div
+                  key={service.title}
+                  className={`rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:border-white/30 hover:bg-white/10 ${
+                    needsCenteredLastRow && isLastItem ? "xl:col-start-3" : ""
+                  }`.trim()}
+                >
                 <div className="flex items-center justify-between gap-3">
                   <h3 className="text-lg font-semibold text-white">
                     {service.title}
@@ -177,7 +183,8 @@ export default function Home() {
                   {service.description}
                 </p>
               </div>
-            ))}
+              );
+            })}
           </div>
           <p className="mt-6 max-w-3xl text-sm text-white/60">
             {siteConfig.pricingNote}
