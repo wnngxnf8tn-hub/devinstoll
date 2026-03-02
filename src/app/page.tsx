@@ -159,17 +159,23 @@ export default function Home() {
           title="Leistungen im Überblick."
           className="pt-14 md:pt-20"
         >
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-6">
             {siteConfig.services.map((service, index) => {
-              const isLastItem = index === siteConfig.services.length - 1;
               const needsCenteredLastRow = siteConfig.services.length % 3 === 2;
+              const isSecondLastItem = index === siteConfig.services.length - 2;
+              const isLastItem = index === siteConfig.services.length - 1;
+              const centeredRowClass = needsCenteredLastRow
+                ? isSecondLastItem
+                  ? "xl:col-start-2"
+                  : isLastItem
+                    ? "xl:col-start-4"
+                    : ""
+                : "";
 
               return (
                 <div
                   key={service.title}
-                  className={`rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:border-white/30 hover:bg-white/10 ${
-                    needsCenteredLastRow && isLastItem ? "xl:col-start-3" : ""
-                  }`.trim()}
+                  className={`rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:border-white/30 hover:bg-white/10 xl:col-span-2 ${centeredRowClass}`.trim()}
                 >
                 <div className="flex items-center justify-between gap-3">
                   <h3 className="text-lg font-semibold text-white">
