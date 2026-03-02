@@ -1,16 +1,18 @@
 import Section from "@/components/Section";
 import ShimmerButton from "@/components/ShimmerButton";
+import Image from "next/image";
 
 const siteConfig = {
   name: "Devin Stoll",
   location: "Amberg & Umgebung",
-  phoneDisplay: "+49 1523 3725774",
-  phoneHref: "tel:+4915233725774",
+  phoneDisplay: "+4915117571915",
+  phoneHref: "tel:+4915117571915",
   email: "devinstoll.10@gmail.com",
-  address: "An der Schwedenschanze 8, 92224 Amberg",
-  whatsappNumber: "4915233725774",
+  address: "Am Wäldchen 1, 92245 Kümmersbruck",
+  whatsappNumber: "+4915117571915",
   whatsappHref:
-    "https://wa.me/4915233725774?text=Hi%20Devin%2C%20ich%20h%C3%A4tte%20Interesse%20an%20einer%20Aufbereitung%20in%20Amberg.%20Kannst%20du%20kurz%20einsch%C3%A4tzen%3F",
+    "https://wa.me/4915117571915?text=Hey%20Devin!",
+
   hero: {
     headline: "Fahrzeugaufbereitung in Amberg",
     subline: "",
@@ -82,7 +84,7 @@ const siteConfig = {
     {
       question: "Wie bekomme ich einen Termin?",
       answer:
-        "Anrufen oder WhatsApp. Termine nach Absprache, auch abends/wochenends.",
+        "Anrufen oder WhatsApp. Termine nach Absprache, meist abends/ wochenends.",
     },
     {
       question: "Was sollte ich vorher wissen/vorbereiten?",
@@ -107,18 +109,22 @@ export default function Home() {
       </div>
 
       <header className="relative z-10">
-        <div className="mx-auto flex max-w-6xl items-center justify-center px-6 py-6 text-center">
-          <div>
-            <div className="mt-2 flex items-center justify-center gap-3">
-              <span className="h-2.5 w-2.5 rounded-full bg-[#3ac6cd]" />
-              <p className="text-lg font-semibold">{siteConfig.name}</p>
-            </div>
+        <div className="mx-auto flex max-w-6xl items-center justify-center px-6 py-4 text-center md:py-5">
+          <div className="mt-1 flex flex-col items-center justify-center gap-2">
+            <p className="text-lg font-semibold">{siteConfig.name}</p>
+            <Image
+              src="/logo.png.svg"
+              alt={`${siteConfig.name} Logo`}
+              className="h-16 w-auto md:h-20"
+              width={250}
+              height={250}
+            />
           </div>
         </div>
       </header>
 
       <main className="relative z-10 pb-28 md:pb-0">
-        <Section id="hero" className="pt-6 pb-10 md:pt-14 md:pb-16">
+        <Section id="hero" className="pt-0 pb-4 md:pt-2 md:pb-8">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
               {siteConfig.hero.headline}
@@ -128,7 +134,7 @@ export default function Home() {
                 {siteConfig.hero.subline}
               </p>
             ) : null}
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
               <ShimmerButton href={siteConfig.phoneHref}>
                 Jetzt anrufen
               </ShimmerButton>
@@ -141,7 +147,7 @@ export default function Home() {
                 WhatsApp schreiben
               </ShimmerButton>
             </div>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-white/60">
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-white/60">
               {siteConfig.trustPoints.map((point) => (
                 <div key={point} className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#3ac6cd]" />
@@ -155,7 +161,7 @@ export default function Home() {
         <Section
           id="leistungen"
           title="Leistungen im Überblick."
-          className="pt-8 md:pt-16"
+          className="pt-2 md:pt-6"
         >
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {siteConfig.services.map((service) => (
@@ -184,7 +190,7 @@ export default function Home() {
 
         <Section
           id="ablauf"
-          title="Drei klare Schritte."
+          title="Drei einfache Schritte."
         >
           <div className="grid gap-6 md:grid-cols-3">
             {siteConfig.process.map((step, index) => (
@@ -206,7 +212,7 @@ export default function Home() {
 
         <Section
           id="faq"
-          title="Kurz & klar."
+          title="Antworten auf Alles."
         >
           <div className="space-y-4">
             {siteConfig.faqs.map((item) => (
