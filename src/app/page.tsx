@@ -192,7 +192,7 @@ export default function Home() {
               );
             })}
           </div>
-          <p className="mt-6 max-w-3xl text-sm text-white/60">
+          <p className="mt-6 max-w-3xl text-sm text-white/60 md:mx-auto md:text-center">
             {siteConfig.pricingNote}
           </p>
         </Section>
