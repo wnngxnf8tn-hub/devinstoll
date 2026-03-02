@@ -157,7 +157,7 @@ export default function Home() {
         <Section
           id="leistungen"
           title="Leistungen im Überblick."
-          className="pt-6 md:pt-10"
+          className="pt-10 md:pt-14"
         >
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {siteConfig.services.map((service) => (
@@ -209,6 +209,7 @@ export default function Home() {
         <Section
           id="faq"
           title="Antworten auf Alles."
+          className="pb-4 md:pb-8"
         >
           <div className="space-y-4">
             {siteConfig.faqs.map((item) => (
