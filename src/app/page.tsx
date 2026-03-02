@@ -222,7 +222,7 @@ export default function Home() {
         <Section
           id="faq"
           title="Antworten auf Alles."
-          className="pb-1 md:pb-3"
+          className="pb-1 md:pb-10"
         >
           <div className="space-y-4">
             {siteConfig.faqs.map((item) => (
