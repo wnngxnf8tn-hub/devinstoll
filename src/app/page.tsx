@@ -106,7 +106,7 @@ export default function Home() {
 
       <header className="relative z-10">
         <div className="mx-auto flex max-w-6xl items-center justify-center px-6 py-4 text-center md:py-5">
-          <div className="mt-1 flex flex-col items-center justify-center gap-2">
+          <div className="mt-1 flex flex-col items-center justify-center gap-1">
             <p className="text-lg font-semibold">{siteConfig.name}</p>
             <Image
               src="/logo.png.svg"
